@@ -30,8 +30,8 @@ pipeline {
         stage('Pull the pushed image and Deploy to EC2') {
             steps {
                 sh '''
-                scp -o StrictHostKeyChecking=no -i /var/lib/jenkins/.ssh/demokey.pem deploy.sh ubuntu@54.152.29.68:/home/ubuntu/
-                ssh -o StrictHostKeyChecking=no -i /var/lib/jenkins/.ssh/demokey.pem ubuntu@54.152.29.68 "BRANCH_NAME=$BRANCH_NAME bash deploy.sh"
+                scp -o StrictHostKeyChecking=no -i /var/lib/jenkins/.ssh/project.pem deploy.sh ubuntu@52.70.155.250:/home/ubuntu/
+                ssh -o StrictHostKeyChecking=no -i /var/lib/jenkins/.ssh/project.pem ubuntu@52.70.155.250 "BRANCH_NAME=$BRANCH_NAME bash deploy.sh"
                 '''
             }
         }
